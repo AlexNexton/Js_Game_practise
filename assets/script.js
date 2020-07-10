@@ -2,7 +2,7 @@
 let colourBtn = document.querySelector('.colour-btn');
 let bodyBackground = document.querySelector('body');
 
-let colours =['yellow', 'red', 'blue' ,'#3b5998'];
+let colours =['#008000', 'red', 'blue', 'yellow'];
 
 
 // event listener
