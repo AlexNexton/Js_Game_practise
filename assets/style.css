@@ -7,9 +7,9 @@ body{
 
 .colour-btn{
     padding: 0.25rem 0.5rem;
-    border: 3px solid #fefefe;
+    border: 3px solid #fafafa;
     border-radius: 7px;
-    color: #fefefe;
+    color: #fafafa;
     background: rgba(0,0,0,0.6);
     font-size: 1.5rem;
     text-transform: capitalize;
@@ -22,4 +22,12 @@ body{
     background: rgb(0, 0, 0);
     transform: scale(1.2);
     text-shadow: 2px 2px 2px rgb(148, 26, 107);
+}
+
+.hexColour{
+    text-transform: capitalize;
+}
+
+.hex{
+    font-size: 3rem;
 }
