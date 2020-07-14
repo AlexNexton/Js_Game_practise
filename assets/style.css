@@ -43,6 +43,7 @@ body{
     cursor: pointer;
     height: 175px;
     width: 125px;
+   
 }
 
 .card-face{
@@ -86,12 +87,14 @@ body{
 .card-back{
     background-color: #571672;
     border-color: #e85307;
+    border-radius: 20%;
 }
 
 .card-front{
     background-color:#ac4ad6;
     border-color:#e85307 ;
     transform: rotateY(180deg);
+    border-radius: 20%;
 }
 .card-value {
   position: relative;
@@ -182,10 +185,52 @@ body{
 
     @media (max-width: 600px){
         .game-container{
-            grid-template-columns: repeat(2,auto);
+            grid-template-columns: repeat(4,auto);
         }
         .game-info-container{
             flex-direction: column;
             align-items: center;
         }
+        .card{ 
+    position: relative; 
+    cursor: pointer;
+    height: 125px;
+    width: 75px;
+    }
+    .cob-web{
+            position: absolute;
+            width: 37px;
+            height: 37px;
+            transition: width 100ms ease-in-out, height 100ms ease-in-out;
+        }
+        .spider{
+                align-self: flex-start;
+                height: 70%;
+                width: 70%;
+                transform: translateY(-10px);
+                transition: transform 100ms ease-in-out;
+            }
+    }
+
+     @media (max-width: 400px){
+        .game-container{
+            grid-template-columns: repeat(4,auto);
+        }
+        .game-info-container{
+            flex-direction: column;
+            align-items: center;
+        }
+        .card{ 
+            position: relative; 
+            cursor: pointer;
+            height: 100px;
+            width: 50px;
+        }
+        .cob-web{
+            position: absolute;
+            width: 27px;
+            height: 27px;
+            transition: width 100ms ease-in-out, height 100ms ease-in-out;
+        }
+
     }
