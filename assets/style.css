@@ -33,6 +33,7 @@ body{
     grid-template-columns: repeat(4,auto);
     grid-gap: 10px; 
     justify-content: center;
+    perspective: 500px /* in order to make the card appear to flip*/
 }
 
 .card{ /* background-color: for cards in order to manipulate the css */
@@ -54,15 +55,34 @@ body{
     border-radius: 12px ;
     border-width: 1px ;
     border-style: solid;
+    transition: transform 500ms ease-in-out; /* this is to slow down the flipping of the card once hovered over*/
+}
+
+.card.vis .card-back{
+ transform: rotateY(-180deg);
+}
+.card.vis .card-front{
+ transform: rotateY(0);
 }
 
 .card-back{
-    background-color: black;
-    border-color: #e3d0e8;
+    background-color: #571672;
+    border-color: #e85307;
 }
 
 .card-front{
-    transform: rotateX(180deg);
+    background-color:#ac4ad6;
+    border-color:#e85307 ;
+    transform: rotateY(180deg);
+}
+.card-value {
+  position: relative;
+  transition: transform 100ms ease-in-out;
+  transform: scale(.9);
+}
+.card-front:hover .card-value{
+    transition: transform 100ms ease-in-out;
+    transform: scale(.9,1);
 }
 
 .cob-web{
@@ -72,7 +92,7 @@ body{
     transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
 
-.card-back:hover .cob-web{
+.card-face:hover .cob-web{
     width: 52px;
     height: 52px;
 }
