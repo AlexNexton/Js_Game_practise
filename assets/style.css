@@ -49,6 +49,12 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
+    overflow: hidden; /*To fix the images breaking the borders of the cardface*/
+    backface-visibility: hidden;
+}
+
+.card-front{
+    transform: rotateX(180deg);
 }
 
 .cob-web{
@@ -76,4 +82,14 @@ body{
     transform: rotate(90deg);
     bottom:0 ;
     right:0 ;
+    }
+
+    .spider{
+        align-self: flex-start;
+        transform: translateY(-10px);
+        transition: transform 100ms ease-in-out;
+    }
+
+    .card-back:hover .spider{
+        transform: translateY(0);
     }
