@@ -37,7 +37,7 @@ body{
 
 .card{ /* background-color: for cards in order to manipulate the css */
     position: relative; /* makes sure card face will be inside of our card */
-    background-color: black;
+    
     height: 175px;
     width: 125px;
 }
@@ -51,6 +51,14 @@ body{
     display: flex;
     overflow: hidden; /*To fix the images breaking the borders of the cardface*/
     backface-visibility: hidden;
+    border-radius: 12px ;
+    border-width: 1px ;
+    border-style: solid;
+}
+
+.card-back{
+    background-color: black;
+    border-color: #e3d0e8;
 }
 
 .card-front{
@@ -61,6 +69,12 @@ body{
     position: absolute;
     width: 47px;
     height: 47px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.card-back:hover .cob-web{
+    width: 52px;
+    height: 52px;
 }
 
 .cob-web-top-left{
