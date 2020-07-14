@@ -1,12 +1,12 @@
-*{
+*{ /*style for boxing the cards */
     box-sizing: border-box;
 }
 
-html{
+html{/* added to help the colour gradient spread out throughout the page */
     min-height: 100vh;
 }
 
-body{
+body{ 
     margin: 0;
     background: radial-gradient(#e3d0e8, #710193);
     }
@@ -22,12 +22,12 @@ body{
 }  
 
 .game-info-container{
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* spaces the cards out */
     display: flex;
     justify-content: space-between;
 }
 
-.game-container{
+.game-container{ /* repeats the grid after the forth colum to create 4 rows */
     display: grid;
     grid-template-columns: repeat(4,auto);
     grid-gap: 10px;
@@ -35,7 +35,7 @@ body{
     justify-content: center;
 }
 
-.card{
+.card{ /* background-color: for cards in order to manipulate the css */
     background-color: black;
     height: 175px;
     width: 125px;
