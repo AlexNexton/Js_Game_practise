@@ -1,33 +1,42 @@
-body{
+*{
+    box-sizing: border-box;
+}
+
+html{
     min-height: 100vh;
-    display: flex;
-    justify-content: center; /*horizontally in the center */
-    align-items: center; /* vertically in the center */
 }
 
-.colour-btn{
-    padding: 0.25rem 0.5rem;
-    border: 3px solid #fafafa;
-    border-radius: 7px;
+body{
+    margin: 0;
+    background: radial-gradient(#e3d0e8, #710193);
+    }
+
+.title{
+    text-align: center;
+    font-size: 6em;
     color: #fafafa;
-    background: rgba(0,0,0,0.6);
-    font-size: 1.5rem;
-    text-transform: capitalize;
-    cursor: pointer;
-    outline: none;
+    }
+ .game-info{
+     color: #fafafa;
+     font-size: 4em;
+}  
 
+.game-info-container{
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
 }
 
-.colour-btn:hover{
-    background: rgb(0, 0, 0);
-    transform: scale(1.2);
-    text-shadow: 2px 2px 2px rgb(148, 26, 107);
+.game-container{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-gap: 10px;
+    margin: 50px;
+    justify-content: center;
 }
 
-.hexColour{
-    text-transform: capitalize;
-}
-
-.hex{
-    font-size: 3rem;
+.card{
+    background-color: black;
+    height: 175px;
+    width: 125px;
 }
