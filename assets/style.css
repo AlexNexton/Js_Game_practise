@@ -152,46 +152,46 @@ body{
     }
 }
 
-.cob-web{
+.paw{
     position: absolute;
     width: 47px;
     height: 47px;
     transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
 
-.card-face:hover .cob-web{
+.card-face:hover .paw{
     width: 52px;
     height: 52px;
 }
 
-.cob-web-top-left{
+.paw-top-left{
     transform: rotate(270deg);
     top: 0;
     left: 0;
 }
-.cob-web-top-right{
+.paw-top-right{
      
     top: 0;
     right: 0;
 }
-.cob-web-bottom-left{
+.paw-bottom-left{
     transform: rotate(180deg);
     bottom: 0;
     left: 0;
 }
-.cob-web-bottom-right{
+.paw-bottom-right{
     transform: rotate(90deg);
     bottom:0 ;
     right:0 ;
     }
 
-    .spider{
+    .bearpaw{
         align-self: flex-start;
         transform: translateY(-10px);
         transition: transform 100ms ease-in-out;
     }
 
-    .card-back:hover .spider{
+    .card-back:hover .bearpaw{
         transform: translateY(0);
     }
 
@@ -211,13 +211,13 @@ body{
     }
     
     
-    .cob-web{
+    .paw{
             position: absolute;
             width: 37px;
             height: 37px;
             transition: width 100ms ease-in-out, height 100ms ease-in-out;
         }
-        .spider{
+        .bearpaw{
                 align-self: flex-start;
                 height: 70%;
                 width: 70%;
@@ -240,7 +240,7 @@ body{
             height: 100px;
             width: 50px;
         }
-        .cob-web{
+        .paw{
             position: absolute;
             width: 27px;
             height: 27px;
