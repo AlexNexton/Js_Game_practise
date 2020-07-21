@@ -107,7 +107,7 @@ class MixorMatch{
          card1.classList.add('matched');
          card2.classList.add('matched');
          this.audioController.match();
-         if(this.matchedCards.length === this.cardsArray)
+         if(this.matchedCards.length === this.cardsArray.length)
          this.victory();
      }
      cardMisMatch(card1, card2){
@@ -137,7 +137,7 @@ class MixorMatch{
         document.getElementById('game-over-text').classList.add('vis');
     }
     victory(){ //victory text pops up
-        clearInterval(this,this.countDown);
+        clearInterval(this.countDown);
         this.audioController.victory();
          document.getElementById('victory-text').classList.add('vis');
     }
