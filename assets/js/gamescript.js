@@ -7,7 +7,7 @@ class AudioController{ // adding the audio for the game and the card sounds
             this.matchSound =  new Audio('assets/audio/match.wav');
             this.victorySound =  new Audio('assets/audio/victory.wav');
             this.gameOverSound = new Audio('assets/audio/gameover.wav');
-            this.backgroundMusic.volume = 0.5;
+            this.backgroundMusic.volume = 0.3;
             this.backgroundMusic.loop = true;
 
     } // functions to be called for the cards and background music
@@ -53,15 +53,56 @@ class MixorMatch{
         this.timeRemanining = this.totalTime;
         this.matchedCards = [];
         this.busy = true;
+
+        setTimeout(() =>{
+            this.audioController.startMusic();
+            this.shuffleCards();
+            this.countDown = this.startCountDown();
+        }, 500);
+        this.hideCards();
+        this.timer.innerText = this.timeRemanining; // reseting timer and ticker
+        this.ticker.innerText = this.totalClicks;
     }
+    hideCards(){
+        this.cardsArray.forEach(card =>{
+            card.classList.remove('vis');
+            card.classList.remove('matched');
+        });
+    }
+
     flipCard(card){
         if(this.canFlipCard(card)){
             this.audioController.flip();
+
             this.totalClicks++; // counts eachtime the cards are clicked
             this.ticker.innerText = this.totalClicks;
-            card.classList.add('vis'); //flips the cards using class using class I created in html
+
+            card.classList.add('vis'); //flips the cards using class I created in html 'vis'
+            //if statement
         }
     }
+    startCountDown(){
+        return setInterval(() => {
+            this.timeRemanining--; // decrements the clock
+            this.timer.innerText = this.timeRemanining; //changes the html clock
+            if(this.timeRemanining === 0){
+                this.gameOver();
+            }
+        }, 1000);
+    }
+    gameOver(){
+        clearInterval(this.countDown);
+        this.audioController.gameOver();
+        document.getElementById('game-over-text').classList.add('vis');
+    }
+     shuffleCards(){ //fisher and yates shuffle - taken from the internet https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+            for(let i = this.cardsArray.length - 1; i > 0; i--)
+            {
+                let randIndex = Math.floor(Math.random() * (i+1));
+                this.cardsArray[randIndex].style.order = i;
+                this.cardsArray[i].style.order = randIndex;
+            }
+        }
     canFlipCard(card){ // if all three of these statements are false then this will return true
         return true; // to see the card flipping for now
         //return !this.busy && !this.matchedCards.includes(card) && card !== this.cardToCheck;
