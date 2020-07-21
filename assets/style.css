@@ -13,6 +13,10 @@ body{
     
     }
 
+    .overflow{
+        overflow: hidden;
+    }
+
 .title{
     text-align: center;
     font-size: 6em;
